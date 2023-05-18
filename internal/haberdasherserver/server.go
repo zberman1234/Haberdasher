@@ -23,9 +23,6 @@ func (s *Server) MakeHat(ctx context.Context, size *pb.Size) (*pb.Hat, error) {
 		httpStatus := twirp.ServerHTTPStatusFromErrorCode(twirp.Unavailable)
 		return nil, twirp.Unavailable.Error("Error " + strconv.Itoa(httpStatus) + " " + http.StatusText(httpStatus) + "\n Haberdasher is out for lunch\n")
 	}
-	// if timeHours() > 13 && timeHours() < 14 {
-	// 	return nil, twirp.NewError(twirp.Unavailable, "Server is down for lunch")
-	// }
 	if size.Inches <= 0 {
 		return nil, twirp.InvalidArgumentError("inches", "I can't make a hat that small!")
 	}
