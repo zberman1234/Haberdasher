@@ -4,8 +4,8 @@ import (
 	"context"
 	"math/rand"
 
-	//add an import, as pb, that imports the generated service.pb.go file
-	//pb "github.com/example/rpc/haberdasher"
+	//	Local import statements follow the format:
+	//	"<relative module path>/<package>"
 	pb "github.com/example/rpc/haberdasher"
 
 	"github.com/twitchtv/twirp"
